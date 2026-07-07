@@ -1,0 +1,514 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100svh;
+  background: linear-gradient(135deg, #000000, #240768);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  padding: clamp(1rem, 4vw, 2rem);
+  overflow-x: hidden;
+}
+
+ul,
+figure,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* CABECERA */
+
+#cabecera {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: clamp(1rem, 4vw, 2rem);
+  padding: 1rem 0;
+}
+
+.bloqueTitulos {
+  width: 70%;
+  min-width: 0;
+}
+
+.tituloPorfolio {
+  width: 100%;
+  color: white;
+  font-size: clamp(1.4rem, 7vw, 3rem);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: left;
+  text-shadow: 2px 2px 10px white;
+  overflow-wrap: break-word;
+  animation: titleGlow 2.8s ease-in-out infinite alternate;
+}
+
+.separadorNombre {
+  width: 100%;
+  max-width: 35rem;
+  height: 2px;
+  margin-top: 0.5rem;
+  background-color: white;
+  box-shadow: 1px 2px 3px white;
+}
+
+.info {
+  width: 100%;
+  max-width: 70ch;
+  color: white;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  line-height: 1.5;
+  margin-top: 0.7rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 6px rgba(255, 255, 255, 0.7);
+  text-align: justify;
+  overflow-wrap: break-word;
+}
+.accionesPerfil{
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+}
+.perfil{
+  color: lightgray;
+
+}
+
+/* HABILIDADES CABECERA */
+
+.bloqueHabilidades {
+  width: 30%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.listaHabilidades {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.habilidad {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.75rem;
+  color: white;
+  font-size: clamp(0.75rem, 2.5vw, 1rem);
+  font-weight: bold;
+  text-align: left;
+  overflow-wrap: break-word;
+}
+#tituloHerramientas{
+  color: gray;
+  font-size: clamp(1rem, 1vw, 1.5rem);
+}
+
+/* CENTRO LOGOS HABILIDAD */
+.logoHabilidad {
+  order: -1;
+  width: clamp(1.5rem, 5vw, 2.2rem);
+  height: clamp(1.5rem, 5vw, 2.2rem);
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 50%;
+  filter: drop-shadow(0 0 0.4rem rgba(255, 255, 255, 0.4));
+}
+
+/* SEPARADORES */
+
+.separador {
+  width: 100%;
+  height: 1px;
+  background-color: lightgrey;
+}
+
+/* CUERPO */
+
+#cuerpo {
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Te funciona con tu HTML actual usando id.
+   También queda preparado por si luego cambias a class="contentLog". */
+
+#contentLog,
+.contentLog {
+  width: 100%;
+  height: auto;
+  min-height: 8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px gray solid;
+  background: linear-gradient(135deg, #dbcece, #8d76c2, rgb(56, 56, 56));
+  border-radius: 20px;
+  padding: clamp(1rem, 4vw, 1.5rem);
+  margin-top: 1rem;
+  box-shadow: 0px 3px 5px lightgray;
+}
+
+/* TÍTULOS */
+
+#subtitulo,
+.subtitulo {
+  color: white;
+  text-align: center;
+  text-shadow: 2px 5px 5px white;
+  margin-bottom: 1rem;
+  font-size: clamp(1.2rem, 6vw, 3rem);
+  font-weight: bold;
+}
+
+/* LOGOS DESARROLLO */
+
+.logosPro {
+  width: 100%;
+}
+
+#menuLogoSlide,
+.menuLogoSlide {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(0.6rem, 3vw, 1rem);
+  flex-wrap: wrap;
+}
+
+.enlacesLogos {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: opacity 0.5s ease, transform 0.35s ease;
+}
+
+.cardImg1 {
+  width: clamp(2rem, 8vw, 3rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card1 {
+  background-color: transparent;
+  border: none;
+  transition: transform 1s ease;
+}
+
+.logosTec {
+  width: clamp(1.7rem, 8vw, 2.8rem);
+  height: clamp(1.7rem, 8vw, 2.8rem);
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease;
+}
+
+.logosTec:hover {
+  transform: translateY(-0.4rem) scale(1.18) rotate(6deg);
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.9),
+    0 0 25px rgba(111, 66, 193, 0.9),
+    0 0 45px rgba(13, 202, 240, 0.6);
+  filter: brightness(1.2) saturate(1.4);
+}
+
+#menuLogoSlide:hover .enlacesLogos,
+.menuLogoSlide:hover .enlacesLogos {
+  opacity: 0.25;
+}
+
+#menuLogoSlide .enlacesLogos:hover,
+.menuLogoSlide .enlacesLogos:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* LISTA TECNOLOGÍAS */
+
+#listaContenedor {
+  width: 100%;
+  margin-top: 1rem;
+  background: linear-gradient(190deg, #000000, #240768);
+  border-radius: 10px;
+  box-shadow: 2px 1px 5px white;
+}
+
+.listaApli {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+.listaT {
+  color: white;
+  font-size: clamp(1rem, 4vw, 2rem);
+  font-weight: bold;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+/* FOOTER */
+
+#pie {
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.lista {
+  color: white;
+  width: 50%;
+  font-size: clamp(0.65rem, 2.5vw, 0.9rem);
+  line-height: 1.4;
+  overflow-wrap: break-word;
+}
+
+#marcoLogosRedes {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.redesSociale {
+  width: 100%;
+}
+
+.logoSocial {
+  width: clamp(1.2rem, 5vw, 2rem);
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logoSocial:hover {
+  transform: translateY(-0.2rem) scale(1.12);
+  filter: drop-shadow(0 0 0.5rem rgba(255, 255, 255, 0.8));
+}
+
+.marcoLogos {
+  width: 100%;
+}
+.proyecto{
+  width: 100%;
+  margin: 1rem;
+}
+.botonesProyecto{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+/* LINKS FINALES APARTADO CONTACTO */
+.perfil:hover{
+  transform: translateY(8px);
+  color: white;
+}
+
+.linksContacto:hover{
+  transform: rotate(1.1);
+}
+
+.contacto:hover{
+  /* transform: rotate(2.1); */
+  color: lightgrey;
+  text-shadow: 2px 5px 5px black;
+}
+
+/* BOTONES PROYECTOS */
+.botonPrincipal{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  max-width: max-content;
+  padding: 5px 20px;
+  white-space: nowrap;
+  background-color: black;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px gray;
+}
+.botonPrincipal:hover{
+  background-color: #2563eb;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+/* MOVIMIENTO AL HACER SCROLL */
+
+.contentLog {
+  opacity: 0;
+  transform: translateY(80px);
+
+  animation: aparecer linear both;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ANIMACIONES */
+
+@keyframes titleGlow {
+  from {
+    text-shadow:
+      1px 1px 6px rgba(255, 255, 255, 0.55),
+      0 0 10px rgba(111, 66, 193, 0.5);
+  }
+
+  to {
+    text-shadow:
+      2px 2px 10px rgba(255, 255, 255, 0.95),
+      0 0 22px rgba(13, 202, 240, 0.55);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  #cabecera {
+    flex-direction: column;
+  }
+
+  .bloqueTitulos,
+  .bloqueHabilidades {
+    width: 100%;
+  }
+
+  .bloqueHabilidades {
+    justify-content: flex-start;
+  }
+
+  .listaHabilidades {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .habilidad {
+    width: fit-content;
+  }
+
+  .info {
+    text-align: left;
+  }
+
+  #pie {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 1rem;
+  }
+
+  #cabecera {
+    padding: 0.5rem 0 1rem;
+  }
+
+  .tituloPorfolio {
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
+  }
+
+  .listaHabilidades {
+    gap: 0.6rem;
+  }
+
+  .habilidad {
+    font-size: 0.75rem;
+  }
+
+  #contentLog,
+  .contentLog {
+    padding: 1rem;
+    border-radius: 16px;
+  }
+
+  .listaApli {
+    padding: 0.8rem;
+  }
+
+  #pie {
+    flex-direction: column;
+  }
+
+  .lista,
+  #marcoLogosRedes {
+    width: 100%;
+  }
+
+  #marcoLogosRedes {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tituloPorfolio,
+  .logosTec,
+  .enlacesLogos,
+  .logoSocial,
+  .card1 {
+    animation: none;
+    transition: none;
+  }
+}
