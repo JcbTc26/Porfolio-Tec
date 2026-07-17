@@ -360,7 +360,7 @@ img {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 0.7rem;
+  gap: 1.5rem;
 }
 
 .redesSociale {
@@ -368,7 +368,7 @@ img {
 }
 
 .logoSocial {
-  width: clamp(1.2rem, 5vw, 2rem);
+  width: clamp(1.7rem, 5vw, 2.5rem);
   height: auto;
   object-fit: contain;
   transition: transform 0.3s ease, filter 0.3s ease;
