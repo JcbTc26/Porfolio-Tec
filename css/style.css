@@ -399,7 +399,6 @@ img {
 }
 
 .contacto:hover{
-  /* transform: rotate(2.1); */
   color: lightgrey;
   text-shadow: 2px 5px 5px black;
 }
@@ -528,10 +527,6 @@ img {
   #cabecera {
     padding: 0.5rem 0 1rem;
   }
-
-  /* .tituloPorfolio {
-    font-size: clamp(1.5rem, 10vw, 2.5rem);
-  } */
 
   .listaHabilidades {
     gap: 0.6rem;
