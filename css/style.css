@@ -46,21 +46,70 @@ img {
 #cabecera {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
   gap: clamp(1rem, 4vw, 2rem);
   padding: 1rem 0;
 }
 
 .bloqueTitulos {
-  width: 70%;
+  width: 100%;
   min-width: 0;
+}
+
+/* FOTO */
+.contenedorFoto{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.foto {
+  width: clamp(100px, 3vw, 320px);
+  display: block;
+  object-fit: cover;
+  border-radius: 50%;
+
+  animation: flotar 3s ease-in-out infinite;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.foto:hover {
+  animation-play-state: paused;
+
+  transform: scale(1.08) rotate(2deg);
+  filter: brightness(1.1) saturate(1.25);
+
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+@keyframes flotar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .foto {
+    animation: none;
+  }
 }
 
 .tituloPorfolio {
   width: 100%;
   color: white;
-  font-size: clamp(1.4rem, 7vw, 3rem);
+  font-size: clamp(1.5rem, 2vw, 3rem);
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-weight: bold;
   line-height: 1.1;
@@ -72,7 +121,6 @@ img {
 
 .separadorNombre {
   width: 100%;
-  max-width: 35rem;
   height: 2px;
   margin-top: 0.5rem;
   background-color: white;
@@ -95,40 +143,38 @@ img {
   width: 100%;
   text-align: center;
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-around;
+  border: 1px whitesmoke solid;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  transition: box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.accionesPerfil:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 0 40px rgba(59, 130, 246, 0.8),
+    0 0 90px rgba(139, 92, 246, 0.5);
 }
 .perfil{
-  color: lightgray;
-
-}
-
-/* HABILIDADES CABECERA */
-
-.bloqueHabilidades {
-  width: 30%;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.listaHabilidades {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.habilidad {
-  width: 100%;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: flex-start;
-  gap: 0.75rem;
+  justify-content: center;
+  width: auto;
+  max-width: max-content;
+  padding: 5px 20px;
+  white-space: nowrap;
+  background-color: black;
   color: white;
-  font-size: clamp(0.75rem, 2.5vw, 1rem);
-  font-weight: bold;
-  text-align: left;
-  overflow-wrap: break-word;
+  border-radius: 10px;
+  box-shadow: 2px 3px 5px gray;
+
 }
+
 #tituloHerramientas{
   color: gray;
   font-size: clamp(1rem, 1vw, 1.5rem);
@@ -279,14 +325,14 @@ img {
   justify-content: center;
   gap: 0.5rem;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .listaT {
   color: white;
-  font-size: clamp(1rem, 4vw, 2rem);
+  font-size: clamp(1rem, 3vw, 2rem);
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   overflow-wrap: break-word;
 }
 
@@ -340,12 +386,7 @@ img {
   width: 100%;
   margin: 1rem;
 }
-.botonesProyecto{
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  margin-top: 1rem;
-}
+
 
 /* LINKS FINALES APARTADO CONTACTO */
 .perfil:hover{
@@ -363,8 +404,16 @@ img {
   text-shadow: 2px 5px 5px black;
 }
 
-/* BOTONES PROYECTOS */
-.botonPrincipal{
+/* BOTONES PROYECTO */
+
+.botonesProyecto{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+.botonPrincipal, .perfil{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -377,10 +426,24 @@ img {
   border-radius: 10px;
   box-shadow: 2px 3px 5px gray;
 }
-.botonPrincipal:hover{
+.botonPrincipal:hover, .perfil:hover{
   background-color: #2563eb;
   transform: translateY(-4px);
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 5px black;
+}
+.botonSecundario{
+  width: fit-content;
+  border:1px #240768 solid;
+  border-radius: 10px;
+  padding:3px 6px;
+
+}
+.botonSecundario:hover{
+  background-color: #2563eb;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 3px 5px black;
 }
 
 /* MOVIMIENTO AL HACER SCROLL */
@@ -466,9 +529,9 @@ img {
     padding: 0.5rem 0 1rem;
   }
 
-  .tituloPorfolio {
+  /* .tituloPorfolio {
     font-size: clamp(1.5rem, 10vw, 2.5rem);
-  }
+  } */
 
   .listaHabilidades {
     gap: 0.6rem;
